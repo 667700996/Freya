@@ -471,7 +471,7 @@ class FreyaGUI:
         if tk is None or ttk is None:
             raise RuntimeError("tkinter를 사용할 수 없습니다.")
         self.root = root
-        self.root.title("Freya Load Tester")
+        self.root.title("Freya")
         self.root.minsize(1024, 720)
 
         self.targets: List[TargetConfig] = []
@@ -527,8 +527,8 @@ class FreyaGUI:
         ttk.Button(btns, text="추가", command=self.add_target).pack(side="left", padx=(0, 8))
         ttk.Button(btns, text="수정", command=self.edit_target).pack(side="left", padx=(0, 8))
         ttk.Button(btns, text="삭제", command=self.remove_target).pack(side="left", padx=(0, 8))
-        ttk.Button(btns, text="시나리오 불러오기", command=self.load_scenario).pack(side="left", padx=(32, 8))
-        ttk.Button(btns, text="시나리오 저장", command=self.save_scenario).pack(side="left")
+        ttk.Button(btns, text="시나리오 저장", command=self.save_scenario).pack(side="right", padx=(8, 0))
+        ttk.Button(btns, text="시나리오 불러오기", command=self.load_scenario).pack(side="right", padx=(8, 0))
 
         log_frame = ttk.Labelframe(outer, text="로그")
         log_frame.pack(fill="both", expand=True)
